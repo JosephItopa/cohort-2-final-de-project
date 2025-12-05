@@ -16,7 +16,7 @@ provider "aws" {
 
 # S3 BUCKET
 
-resource "aws_s3_bucket" "data_bucket" {
+resource "aws_s3_bucket" "supabase-bucket-2025" {
   bucket = var.bucket_name
 
   tags = {
@@ -41,7 +41,7 @@ resource "aws_s3_bucket_versioning" "versioning" {
   bucket = aws_s3_bucket.data_bucket.id
 
   versioning_configuration {
-    status = "Enabled"
+    status = "Disabled"
   }
 }
 
