@@ -1,34 +1,22 @@
-import psycopg2
 import os
-import re
-import io
-import json
-import hashlib
 import logging
-import tempfile
-import datetime
-from load import remove_files
-from load import init_supabase
-from load import dataframe_to_supabase
-from load import upload_parquet_files
-from typing import Dict, List, Tuple
+from data_loader.load import remove_files
+from data_loader.load import init_supabase
+from data_loader.load import dataframe_to_supabase
+from data_loader.load import upload_parquet_files
+from typing import Dict, List
 
-import boto3
-import pandas as pd
-import pyarrow as pa
-import pyarrow.parquet as pq
 from dotenv import load_dotenv
-from botocore.exceptions import ClientError
-from extract import get_ssm_parameter
-from extract import ensure_tmp_folder
-from extract import download_customer_csvs
-from extract import extract_postgres_table
-from extract import download_s3_prefix
+from extraction.extract import get_ssm_parameter
+from extraction.extract import ensure_tmp_folder
+from extraction.extract import download_customer_csvs
+from extraction.extract import extract_postgres_table
+from extraction.extract import download_s3_prefix
 
-from transform import transform_media_complaint_jsons
-from transform import transform_web_form_csvs
-from transform import transform_call_logs_csv
-from transform import transform_customers_csv
+from transformation.transform import transform_media_complaint_jsons
+from transformation.transform import transform_web_form_csvs
+from transformation.transform import transform_call_logs_csv
+from transformation.transform import transform_customers_csv
 
 load_dotenv()
 SECRET_ACCESS_KEY = os.getenv("SECRET_ACCESS_KEY")

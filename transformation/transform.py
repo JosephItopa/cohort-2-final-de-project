@@ -1,17 +1,6 @@
-import psycopg2
 import os
-import re
-import io
-import json
-import hashlib
-import logging
-import tempfile
-import datetime
-from typing import Dict, List, Tuple
-
+from typing import Dict, List
 import pandas as pd
-import pyarrow as pa
-import pyarrow.parquet as pq
 
 
 # SETTINGS

@@ -1,18 +1,10 @@
 import psycopg2
 import os
-import re
-import io
-import json
-import hashlib
 import logging
-import tempfile
-import datetime
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 import boto3
 import pandas as pd
-import pyarrow as pa
-import pyarrow.parquet as pq
 from dotenv import load_dotenv
 from botocore.exceptions import ClientError
 

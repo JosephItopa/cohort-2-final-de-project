@@ -1,10 +1,9 @@
 import os
-import shutil
 import boto3
 from dotenv import load_dotenv
 from supabase import create_client, Client
 from dotenv import load_dotenv
-from botocore.exceptions import ClientError, NoCredentialsError
+from botocore.exceptions import ClientError
 
 load_dotenv()
 SECRET_ACCESS_KEY = os.getenv("SECRET_ACCESS_KEY")
