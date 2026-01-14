@@ -14,24 +14,26 @@
 #### Project structure
 ##### COHORT-2-FINAL-PROJECT/
 ##### │
-##### ├── __pycache__/
-##### │
 ##### ├── .github/
 ##### │   └── workflows/
 ##### │       └── python-script.yaml
 ##### │
 ##### ├── slide/
-##### │   (folder with presentation or assets)
+##### │   (folder with presentation)
 ##### │
-##### ├── extract_ingest.py
-##### ├── extract.py
-##### ├── load.py
+##### ├── extraction/
+##### │   └── extract.py
+##### │   └── extract_ingest.py
+##### ├── transformation/
+##### │   └── tranform.py
+##### ├── data_loader/
+##### │   └── load.py
+##### ├── notebooks/
+##### │   └── pipe.py
 ##### ├── main.tf
-##### ├── pipe.ipynb
 ##### ├── pipeline.py
 ##### ├── README.md
 ##### ├── requirements.txt
-##### ├── transform.py
 ##### └── variables.tf
 
 ##### COMPONENT BREAKDOWN
@@ -43,10 +45,10 @@
 ##### .github/workflows/python-script.yaml
 
 ##### C) ETL Pipeline Code
-##### extract.py           # Handles data extraction logic
-##### transform.py         # Cleans/transforms data
-##### load.py              # Loads data (e.g., to Supabase)
-##### pipeline.py          # Orchestration of entire ETL pipeline
+##### extraction/extract.py           # Handles data extraction logic
+##### transformation/transform.py         # Cleans/transforms data
+##### data_loader/load.py              # Loads data (e.g., to Supabase)
+##### notebooks/pipeline.py          # Orchestration of entire ETL pipeline
 
 ##### d) Docs
 ##### README.md
