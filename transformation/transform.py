@@ -33,14 +33,14 @@ def transform_call_logs_csv(tmp_folder: str = TMP_FOLDER):
         # Load CSV
         df = pd.read_csv(file_path)
 
-        # --- Fix broken column name ---
+        # Fix broken column name 
         # Handles cases like "COMPLAINT_catego ry" with space in between
         bad_cols = ["COMPLAINT_catego ry", "COMPLAINT_catego  ry", "COMPLAINT_category "]
         for bad_col in bad_cols:
             if bad_col in df.columns:
                 df = df.rename(columns={bad_col: "complaint_category"})
 
-        # --- Generic column name cleaning ---
+        #  Generic column name cleaning 
         df.columns = (
             df.columns
             .str.strip()
@@ -48,7 +48,7 @@ def transform_call_logs_csv(tmp_folder: str = TMP_FOLDER):
             .str.replace(" ", "_")
         )
 
-        # --- Convert date-like columns to datetime ---
+        #  Convert date-like columns to datetime 
         for col in df.columns:
             if "date" in col:
                 df[col] = pd.to_datetime(df[col], errors="coerce")
@@ -85,7 +85,7 @@ def transform_web_form_csvs(tmp_folder: str = TMP_FOLDER):
         # Load CSV
         df = pd.read_csv(file_path)
 
-        # --- Transform Column Names ---
+        #  Transform Column Names 
         df.columns = (
             df.columns
             .str.lower()
@@ -93,7 +93,7 @@ def transform_web_form_csvs(tmp_folder: str = TMP_FOLDER):
             .str.replace(" ", "_")
         )
 
-        # --- Convert Date Columns ---
+        #  Convert Date Columns 
         for col in df.columns:
             if "date" in col:
                 df[col] = pd.to_datetime(df[col], errors="coerce")
@@ -130,7 +130,7 @@ def transform_media_complaint_jsons(tmp_folder: str = TMP_FOLDER):
         # Load JSON
         df = pd.read_json(file_path)
 
-        # --- Transform Column Names ---
+        #  Transform Column Names 
         df.columns = (
             df.columns
             .str.lower()
@@ -138,7 +138,7 @@ def transform_media_complaint_jsons(tmp_folder: str = TMP_FOLDER):
             .str.replace(" ", "_")
         )
 
-        # --- Convert All Date Columns to datetime ---
+        #  Convert All Date Columns to datetime 
         for col in df.columns:
             if "date" in col:
                 df[col] = pd.to_datetime(df[col], errors="coerce")
@@ -173,14 +173,14 @@ def transform_customers_csv(tmp_folder: str = TMP_FOLDER):
         # Load CSV
         df = pd.read_csv(file_path)
 
-        # --- Fix broken column name ---
+        # Fix broken column name 
         # Handles cases like "COMPLAINT_catego ry" with space in between
         bad_cols = ["COMPLAINT_catego ry", "COMPLAINT_catego  ry", "COMPLAINT_category "]
         for bad_col in bad_cols:
             if bad_col in df.columns:
                 df = df.rename(columns={bad_col: "complaint_category"})
 
-        # --- Generic column name cleaning ---
+        #  Generic column name cleaning 
         df.columns = (
             df.columns
             .str.strip()
@@ -188,7 +188,7 @@ def transform_customers_csv(tmp_folder: str = TMP_FOLDER):
             .str.replace(" ", "_")
         )
 
-        # --- Convert date-like columns to datetime ---
+        # Convert date-like columns to datetime 
         for col in df.columns:
             if "date" in col:
                 df[col] = pd.to_datetime(df[col], errors="coerce")

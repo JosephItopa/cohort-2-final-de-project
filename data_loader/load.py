@@ -103,7 +103,7 @@ def upload_parquet_files(local_dir, bucket_name, s3_prefix=""):
             except Exception as e:
                 print(f"ERROR uploading {file_name}: {e}")
 
-    print("Upload complete!")
+    print("Upload complete")
 
 
 def remove_files(tmp_dir = LOCAL_TMP):

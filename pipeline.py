@@ -69,9 +69,9 @@ logging.info("All extractions completed successfully!")
  
 # extract customer complains
 cust = download_customer_csvs()
-# Extract Social Media Complaints (Daily JSON)
+# Extract Social Media Complaints
 social_files = download_s3_prefix(SOCIAL_MEDIA_PREFIX, LOCAL_TMP, file_type="json")
-# Extract Call Center Logs (Daily CSV)
+# Extract Call Center Logs
 call_logs = download_s3_prefix(CALL_LOGS_PREFIX, LOCAL_TMP, file_type="csv")
 
 
