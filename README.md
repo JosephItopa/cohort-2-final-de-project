@@ -13,23 +13,20 @@
 ##### 2. The files are located at different sources.
 #### Project structure
 ##### COHORT-2-FINAL-PROJECT/
-##### │
 ##### ├── .github/
-##### │   └── workflows/
-##### │       └── python-script.yaml
-##### │
+#####     └── workflows/
+#####        └── python-script.yaml
 ##### ├── slide/
-##### │   (folder with presentation)
-##### │
+#####        (folder with presentation)
 ##### ├── extraction/
-##### │   └── extract.py
-##### │   └── extract_ingest.py
+#####     └── extract.py
+#####     └── extract_ingest.py
 ##### ├── transformation/
-##### │   └── tranform.py
+#####    └── tranform.py
 ##### ├── data_loader/
-##### │   └── load.py
+#####    └── load.py
 ##### ├── notebooks/
-##### │   └── pipe.py
+#####    └── pipe.py
 ##### ├── main.tf
 ##### ├── pipeline.py
 ##### ├── README.md
@@ -54,12 +51,8 @@
 ##### README.md
 ##### requirements.txt
 ##### slide/
-
-
 #### Architecture diagram
-
 #### How to Run the Project
-
 #### Choice of tools and technology.
 ##### 1. Python
 ##### 2. SQL
@@ -71,12 +64,11 @@
 ##### A) Git clone the repo: git clone git@github.com:JosephItopa/cohort-2-final-de-project.git
 ##### B) Navigate to cohort-2-final-de-project
 ##### C) Export the credentials for Terraform. Examples:
-###### export AWS_ACCESS_KEY_ID="ASIAxxxx"
+###### export AWS_ACCESS_KEY_ID="Axxxx"
 ###### export AWS_SECRET_ACCESS_KEY="xxxx" 
 ###### export AWS_SESSION_TOKEN="xxxx"
 ##### After escorting the credentials sequentially and run the command below:
 ##### 1)terraform init
 ##### 2)terraform plan -var="bucket_name=my-bucket" -var="folder_name=raw"
 ##### 3) terraform apply -auto-approve
-
 ##### D) The trigger the 'run flow' button on github and it will run.
