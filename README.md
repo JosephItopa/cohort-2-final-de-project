@@ -14,19 +14,19 @@
 #### Project structure
 ##### COHORT-2-FINAL-PROJECT/
 ##### ├── .github/
-#####     └── workflows/
-#####        └── python-script.yaml
+#####       └── workflows/
+#####           └── python-script.yaml
 ##### ├── slide/
 #####        (folder with presentation)
 ##### ├── extraction/
-#####     └── extract.py
-#####     └── extract_ingest.py
+#####       └── extract.py
+#####       └── extract_ingest.py
 ##### ├── transformation/
-#####    └── tranform.py
+#####       └── tranform.py
 ##### ├── data_loader/
-#####    └── load.py
+#####       └── load.py
 ##### ├── notebooks/
-#####    └── pipe.py
+#####       └── pipe.py
 ##### ├── main.tf
 ##### ├── pipeline.py
 ##### ├── README.md
